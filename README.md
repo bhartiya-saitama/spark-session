@@ -23,39 +23,9 @@ facilitator/talking_points.md     what to say, per section
    **Cell 0** only. It creates a volume and copies the five data files into it.
 4. You should see five files listed. If you do, you're done — close it.
 
-If Cell 0 fails, message the facilitator before the session, not during it.
+If Cell 0 fails, let the facilitator know.
 
 You need working Python and basic SQL. Nothing else.
-
----
-
-## For the facilitator
-
-### One-time setup
-
-```bash
-python3 data_generator/generate_data.py    # regenerates data/, ~5 MB, deterministic
-```
-
-The generator is seeded (`SEED = 42`), so the row counts quoted throughout
-`facilitator/talking_points.md` stay exactly correct as long as you don't change
-the constants at the top of the script.
-
-Then, **before sharing the repo**:
-
-1. Push it to a **public** GitHub repo (attendees clone it from Databricks).
-2. Set `GITHUB_RAW_BASE` in **both** notebooks to your repo's raw URL. Cell 0
-   prefers the local `data/` folder from the Git clone and only falls back to
-   this URL — but the fallback is what saves you when someone imports the
-   notebook file on its own instead of cloning.
-3. Dry-run `01_spark_hands_on_SOLVED.py` end to end on Free Edition with a
-   stopwatch. Solo execution should land near 20 minutes; attendees typing take
-   roughly double. Over 20 minutes solo means something has to become a demo.
-
-### On the day
-
-Follow `facilitator/run_of_show.md`. Keep the SOLVED notebook open in a second
-tab. The hard pace checkpoint is **leaving Section 3 by minute 34**.
 
 ---
 
