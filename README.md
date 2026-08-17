@@ -6,10 +6,8 @@ No RDDs, no `sparkContext`, no cluster configuration — serverless blocks those
 ```
 data_generator/generate_data.py   synthetic dataset generator (stdlib only)
 data/                             the five generated files, ~5 MB
-notebooks/01_spark_hands_on.py    attendee notebook (exercises blank)
-notebooks/01_spark_hands_on_SOLVED.py   facilitator copy
-facilitator/run_of_show.md        minute-by-minute plan
-facilitator/talking_points.md     what to say, per section
+notebooks/01_spark_hands_on.py    exercises blank
+notebooks/01_spark_hands_on_SOLVED.py   solved copy
 ```
 
 ---
