@@ -123,7 +123,7 @@ items_schema = StructType([
 items_raw = spark.read.csv(f"{BASE}/order_items.csv.gz", header=True, schema=items_schema)
 
 print("total rows      :", items_raw.count())
-# TODO: print how many unit_price values are null
+print("null unit_price :", items_raw.filter(F.col("unit_price").isNull()).count())  # 2,994
 
 # TODO: read the same file with inferSchema=True and printSchema().
 #       What type is unit_price, and why?
