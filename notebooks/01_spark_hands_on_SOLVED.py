@@ -27,8 +27,7 @@ from pathlib import Path
 CATALOG, SCHEMA, VOLUME = "workspace", "default", "spark_session"
 BASE = f"/Volumes/{CATALOG}/{SCHEMA}/{VOLUME}"
 
-# TODO(facilitator): point this at your public repo before sharing.
-GITHUB_RAW_BASE = "https://raw.githubusercontent.com/CHANGE-ME/spark-session/main/data"
+GITHUB_RAW_BASE = "https://raw.githubusercontent.com/bhartiya-saitama/spark-session/main/data"
 
 FILES = [
     "customers.csv.gz",
