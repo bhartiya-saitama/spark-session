@@ -147,18 +147,9 @@ print("distinct rows  :", orders.dropDuplicates().count())  # 60,000
 
 # COMMAND ----------
 
-# DEMO 2b — parsing a day-first timestamp without saying so gives you nulls,
-# not an error. try_to_timestamp returns null instead of failing the job.
-display(
-    orders.select(
-        "order_ts",
-        F.try_to_timestamp("order_ts").alias("naive_parse"),
-        F.to_timestamp("order_ts", "dd-MM-yyyy HH:mm:ss").alias("correct_parse"),
-    ).limit(5)
-)
-
-# COMMAND ----------
-
+# DEMO 2b — order_ts is text like "14-06-2024 09:30:00" (day-first). Give
+# to_timestamp the exact pattern and pull out "yyyy-MM" for monthly grouping
+# later — this order_month column is used in every section from here on.
 orders_clean = (
     orders
     .dropDuplicates()
