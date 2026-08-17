@@ -68,7 +68,7 @@ from pyspark.sql.types import (
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Section 1 — Read & inspect (7 min)
+# MAGIC ## Section 1 — Read & inspect
 # MAGIC
 # MAGIC Three ways to read the same CSV. They are not equivalent.
 
@@ -135,7 +135,7 @@ spark.read.csv(f"{BASE}/order_items.csv.gz", header=True, inferSchema=True).prin
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Section 2 — Transform (5 min)
+# MAGIC ## Section 2 — Transform
 # MAGIC
 # MAGIC `select` / `filter` / `withColumn` / `dropDuplicates` — the daily bread.
 
@@ -197,7 +197,7 @@ display(items_clean.limit(5))
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Section 3 — Aggregate (6 min)
+# MAGIC ## Section 3 — Aggregate
 
 # COMMAND ----------
 
@@ -252,7 +252,7 @@ display(top_products.limit(10))
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Section 4 — Join (6 min)
+# MAGIC ## Section 4 — Join
 
 # COMMAND ----------
 
@@ -318,7 +318,7 @@ items_clean.join(F.broadcast(products), "product_id").explain()
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Section 5 — Spark SQL + windows (6 min)
+# MAGIC ## Section 5 — Spark SQL + windows
 # MAGIC
 # MAGIC DataFrame API and SQL compile to the *same* plan. Use whichever reads better.
 
@@ -379,7 +379,7 @@ display(
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Section 6 — Lazy evaluation & query plans (DEMO, 4 min)
+# MAGIC ## Section 6 — Lazy evaluation & query plans
 
 # COMMAND ----------
 
@@ -437,7 +437,7 @@ chain.unpersist()
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Section 7 — Write it out (DEMO, 3 min)
+# MAGIC ## Section 7 — Write it out
 
 # COMMAND ----------
 
