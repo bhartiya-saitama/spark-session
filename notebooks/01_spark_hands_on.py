@@ -454,7 +454,7 @@ print("written")
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Appendix — where to go next (not run in the session)
+# MAGIC ## Appendix — where to go next
 # MAGIC
 # MAGIC Read this on your own. Each block is a whole topic.
 # MAGIC
