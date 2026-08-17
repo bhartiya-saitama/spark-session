@@ -404,24 +404,6 @@ print(f"first action: {time.time() - start:.3f}s")
 
 # COMMAND ----------
 
-# The filters were pushed down to the file scan — Spark reads less than you asked
-# it to. That optimisation is only possible because execution was deferred.
-chain.explain()
-
-# COMMAND ----------
-
-# Recomputation is the default: every action re-walks the chain from source.
-start = time.time()
-chain.count()
-print(f"second run, no cache: {time.time() - start:.3f}s")
-
-# NOTE: df.cache() / df.persist() / CACHE TABLE / PERSIST TABLE are all
-# blocked on serverless compute (NOT_SUPPORTED_WITH_SERVERLESS). Serverless
-# auto-tunes caching itself; on classic clusters you'd call chain.cache()
-# here and see the repeat count() come back much faster.
-
-# COMMAND ----------
-
 # MAGIC %md
 # MAGIC **`display()` vs `show()` vs `collect()`**
 # MAGIC
