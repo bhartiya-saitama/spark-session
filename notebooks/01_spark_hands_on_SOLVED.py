@@ -410,19 +410,15 @@ chain.explain()
 
 # COMMAND ----------
 
-# Recomputation is the default. cache() makes the second pass cheap.
+# Recomputation is the default: every action re-walks the chain from source.
 start = time.time()
 chain.count()
 print(f"second run, no cache: {time.time() - start:.3f}s")
 
-chain.cache()
-chain.count()  # materialises the cache
-
-start = time.time()
-chain.count()
-print(f"third run, cached   : {time.time() - start:.3f}s")
-
-chain.unpersist()
+# NOTE: df.cache() / df.persist() / CACHE TABLE / PERSIST TABLE are all
+# blocked on serverless compute (NOT_SUPPORTED_WITH_SERVERLESS). Serverless
+# auto-tunes caching itself; on classic clusters you'd call chain.cache()
+# here and see the repeat count() come back much faster.
 
 # COMMAND ----------
 
