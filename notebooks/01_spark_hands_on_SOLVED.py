@@ -379,7 +379,7 @@ display(
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC ## Section 6 — Lazy evaluation & query plans
+# MAGIC ## Section 6 — Lazy evaluation
 
 # COMMAND ----------
 
